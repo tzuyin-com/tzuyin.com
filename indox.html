@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>光明之路｜慈音老師官方網站｜點燈・八字命理・道教文化</title>
+  <meta name="description" content="2025安元辰點燈、文昌燈、財神燈、姻緣燈開放預約。慈音老師親自主持，結合八字命理為你指路，點亮本命光。">
+  <style>
+    :root {
+      --pink: #f38aa5;
+      --pink-dark: #b24462;
+      --pink-light: #fff5f3;
+      --gold: #e6b87b;
+      --text: #4a2f30;
+      --radius-lg: 18px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--pink-light);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    a { text-decoration: none; }
+
+    /* top nav */
+    .topbar {
+      background: rgba(255, 245, 243, 0.3);
+      backdrop-filter: blur(6px);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 18px;
+      border-bottom: 1px solid rgba(242,140,165,.13);
+    }
+    .logo {
+      font-weight: 700;
+      color: var(--pink-dark);
+      letter-spacing: 2px;
+    }
+    .nav-btn {
+      background: var(--pink);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* hero */
+    .hero {
+      background: radial-gradient(circle at top, #ffe3ea 0%, #fff5f3 60%, #fff 100%);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 70px 18px 50px;
+      max-width: 1080px;
+      margin: 0 auto;
+      align-items: center;
+    }
+    .hero-text { flex: 1 1 320px; }
+    .hero-title {
+      font-size: clamp(2.1rem, 4vw, 2.7rem);
+      color: var(--pink-dark);
+      margin-bottom: 10px;
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      margin-bottom: 18px;
+    }
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn-primary {
+      background: var(--pink-dark);
+      color: #fff;
+      border: none;
+      padding: 12px 26px;
+      border-radius: 999px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: .2s;
+    }
+    .btn-primary:hover { background: #902d49; }
+    .btn-ghost {
+      background: rgba(179,68,98,0.1);
+      color: var(--pink-dark);
+      border: 1px solid rgba(179,68,98,0.2);
+      padding: 12px 20px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .hero-img {
+      flex: 0 0 310px;
+      display: flex;
+      justify-content: center;
+    }
+    .hero-img-inner {
+      width: 260px;
+      height: 260px;
+      background: #fff;
+      border: 6px solid rgba(243,138,165,0.25);
+      border-radius: 30px 30px 0 30px;
+      overflow: hidden;
+      box-shadow: 0 20px 35px rgba(179,68,98,.13);
+      background-size: cover;
+      background-position: center;
+      /* 這裡換成老師照片的路徑 */
+      background-image: url("teacher.jpg");
+    }
+
+    section {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 40px 18px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+      color: var(--pink-dark);
+    }
+    .section-sub {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      color: #7a5558;
+    }
+
+    /* cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 15px;
+    }
+    .card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 20px 20px 18px;
+      border: 1px solid rgba(243,138,165,0.14);
+      box-shadow: 0 10px 22px rgba(244,132,159,.05);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .card h3 {
+      margin: 0;
+      color: var(--pink-dark);
+      font-size: 1.1rem;
+    }
+    .card small {
+      color: #f0a6ba;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: .7rem;
+    }
+    .card p { flex: 1; }
+    .card button {
+      align-self: flex-start;
+    }
+
+    /* CTA block */
+    .cta-block {
+      background: linear-gradient(90deg, rgba(243,138,165,1) 0%, rgba(249,196,208,1) 100%);
+      border-radius: 20px;
+      padding: 35px 24px;
+      text-align: center;
+      color: #fff;
+      margin-top: 45px;
+    }
+    .cta-block h2 { margin-top: 0; }
+    .cta-block p { margin-bottom: 16px; }
+
+    /* footer */
+    footer {
+      text-align: center;
+      padding: 40px 18px 70px;
+      color: #a4757b;
+      font-size: .9rem;
+    }
+
+    /* floating line btn */
+    .floating-line {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      background: #06c755;
+      color: #fff;
+      border-radius: 999px;
+      padding: 13px 20px;
+      box-shadow: 0 14px 30px rgba(6,199,85,0.32);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+      z-index: 1000;
+    }
+    .floating-line span.icon {
+      background: #fff;
+      color: #06c755;
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 720px) {
+      .hero { padding-top: 50px; }
+      .hero-img { order: -1; flex: 1 1 100%; }
+      .hero-img-inner { margin-bottom: 5px; }
+      .hero-cta { flex-direction: column; align-items: flex-start; }
+      .floating-line { right: 12px; bottom: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 導覽列 -->
+  <div class="topbar">
+    <div class="logo">光明之路｜慈音老師</div>
+    <a href="#contact" class="nav-btn">立即預約</a>
+  </div>
+
+  <!-- Hero -->
+  <header class="hero" id="top">
+    <div class="hero-text">
+      <h1 class="hero-title">點亮一盞燈，順起你一整年。</h1>
+      <p class="hero-sub">
+        2025年安元辰、財富、姻緣、文昌點燈開放中。由慈音老師親自主持，結合八字命理為你挑對燈種，護元神、轉運勢、招貴人。
+      </p>
+      <div class="hero-cta">
+        <a href="https://line.me/R/XXXXXX" class="btn-primary">立即預約點燈</a>
+        <a href="https://line.me/R/XXXXXX" class="btn-ghost">想先問老師</a>
+      </div>
+      <p style="margin-top:14px;font-size:.8rem;color:#a06670;">
+        燈位有限，依緣分開放，填寫LINE即可保留。
+      </p>
+    </div>
+    <div class="hero-img">
+      <div class="hero-img-inner"></div>
+    </div>
+  </header>
+
+  <!-- 關於老師 -->
+  <section id="about">
+    <h2 class="section-title">關於慈音老師</h2>
+    <p class="section-sub">
+      專業八字命理解析老師｜電視與廣播節目主持人｜道教文化傳承與弘揚者
+    </p>
+    <div class="cards" style="margin-top:20px;">
+      <div class="card">
+        <small>專業背景</small>
+        <h3>深厚命理造詣</h3>
+        <p>專精八字分析、流年運勢與合婚，善於把「看不懂的命理」說成人聽得懂的生活指引，已協助許多信眾找到方向。</p>
+        <a href="https://line.me/R/XXXXXX" class="btn-primary">預約命理</a>
+      </div>
+      <div class="card">
+        <small>媒體主持</small>
+        <h3>各大電視台節目</h3>
+        <p>曾於緯來、八大、雙子電視台主持節目，目前固定主持靖天電視台、中華電信MOD《光明之路》，專業與親和並重。</p>
+        <a href="https://line.me/R/XXXXXX" class="btn-primary">預約諮詢</a>
+      </div>
+      <div class="card">
+        <small>文化弘揚</small>
+        <h3>道教本質回歸</h3>
+        <p>以點燈、祈福、命理為入口，帶大家認識真正的道教智慧，不是迷信，而是順著天時地利人和而行。</p>
+        <a href="https://line.me/R/XXXXXX" class="btn-primary">我要點燈</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 點燈專區 -->
+  <section id="lighting">
+    <h2 class="section-title">2025 點燈祈福專區</h2>
+    <p class="section-sub">
+      不同的狀況點不同的燈，老師會依你的八字、流年、所求方向建議燈種。先預約，老師會在LINE跟你確認。
+    </p>
+    <div class="cards">
+      <div class="card">
+        <h3>🌕 元辰燈</h3>
+        <p>護佑元神、化解沖煞、穩定氣場，適合覺得「今年特別卡」的人。</p>
+        <a href="https://line.me/R/XXXXXX" class="btn-primary">立即預約</a>
+      </div>
+      <div class="card">
+        <h3>📖 文昌燈</h3>
+        <p>考試、升遷、轉職、學習智慧開啟，加持頭腦清明、表現順利。</p>
+        <a href="https://line.me/R/XXXXXX" class="btn-primary">立即預約</a>
+      </div>
+      <div class="card">
+        <h3>💰 財神燈</h3>
+        <p>想要開源、招財、補流年財庫、提升業績與成交力的人可點。</p>
+        <a href="https://line.me/R/XXXXXX" class="btn-primary">立即預約</a>
+      </div>
+      <div class="card">
+        <h3>💞 姻緣燈</h3>
+        <p>牽引正緣、穩定感情、修補關係，適合單身與感情不穩定者。</p>
+        <a href="https://line.me/R/XXXXXX" class="btn-primary">立即預約</a>
+      </div>
+    </div>
+
+    <div class="cta-block">
+      <h2>燈位有限，依緣開放。</h2>
+      <p>現在加LINE，跟老師說你要點哪一盞燈，會先幫你保留。</p>
+      <a href="https://line.me/R/XXXXXX" class="btn-primary" style="background:#fff;color:var(--pink-dark);">加LINE預約點燈</a>
+    </div>
+  </section>
+
+  <!-- 命理服務 -->
+  <section id="service">
+    <h2 class="section-title">命理解析服務</h2>
+    <p class="section-sub">
+      想知道「為什麼這幾年都不順」、「今年能不能換工作」、「他是不是對的人」？先讓命盤說話，再做選擇。
+    </p>
+    <div class="cards">
+      <div class="card">
+        <h3>八字命盤解析</h3>
+        <p>看你的天賦、適合的職場方向、財庫位置、感情模式，幫你找到「最不費力」的路。</p>
+        <a href="https://line.me/R/XXXXXX" class="btn-primary">立即預約</a>
+      </div>
+      <div class="card">
+        <h3>流年運勢分析</h3>
+        <p>掌握2025關鍵月份，哪些能衝、哪些要守，提前避開不必要的損耗。</p>
+        <a href="https://line.me/R/XXXXXX" class="btn-primary">立即預約</a>
+      </div>
+      <div class="card">
+        <h3>合婚・合夥諮詢</h3>
+        <p>感情、婚姻、創業夥伴都能看，先看合不合，再決定要不要投入。</p>
+        <a href="https://line.me/R/XXXXXX" class="btn-primary">立即預約</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 聯絡 / 底部CTA -->
+  <section id="contact" style="margin-top:50px;">
+    <div class="cta-block" style="background:linear-gradient(180deg,#b24462 0%, #f38aa5 100%);">
+      <h2>所有服務都在LINE上完成</h2>
+      <p>點燈、問事、命盤、調整方案，老師都會在LINE裡面跟你確認，流程簡單又安心。</p>
+      <a href="https://line.me/R/XXXXXX" class="btn-primary" style="background:#fff;color:var(--pink-dark);">現在就加LINE</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 光明之路 慈音老師 ｜ 八字命理 × 點燈祈福 × 道教文化弘揚
+  </footer>
+
+  <!-- 固定LINE按鈕 -->
+  <a href="https://line.me/R/XXXXXX" class="floating-line">
+    <span class="icon">L</span> 加LINE預約
+  </a>
+
+</body>
+</html>
